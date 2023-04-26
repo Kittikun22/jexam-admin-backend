@@ -18,6 +18,30 @@ const getAllExam = (req, res) => {
         })
 }
 
+const getExamCategory = (req, res) => {
+    db.query("SELECT * FROM category",
+        (err, result) => {
+            if (err) {
+                console.log(err);
+            } else {
+                res.send(result)
+            }
+        })
+}
+
+const getExamSubject = (req, res) => {
+    db.query("SELECT * FROM subject",
+        (err, result) => {
+            if (err) {
+                console.log(err);
+            } else {
+                res.send(result)
+            }
+        })
+}
+
 module.exports = {
-    getAllExam
+    getAllExam,
+    getExamCategory,
+    getExamSubject
 };
